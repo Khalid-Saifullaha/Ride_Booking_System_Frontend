@@ -28,10 +28,31 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["USERS"],
     }),
+    changeOnlineStatus: builder.mutation({
+      query: (userId: string) => ({
+        url: `/admin/change-online-status/${userId}`,
+        method: "PATCH",
+      }),
+      invalidatesTags: ["USERS"],
+    }),
 
     // ==============Rides============
     getAllRides: builder.query({
-      query: () => ({ url: "/admin/getAllRide", method: "GET" }),
+      query: (params?: {
+        page?: number;
+        limit?: number;
+        status?: string;
+        riderName?: string;
+        driverName?: string;
+        startDate?: string;
+        endDate?: string;
+        minFare?: number;
+        maxFare?: number;
+      }) => ({
+        url: "/admin/getAllRide",
+        method: "GET",
+        params: params || {},
+      }),
       providesTags: ["RIDES"],
       transformResponse: (res) => res.data,
     }),
@@ -64,15 +85,23 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["USERS"],
     }),
+    getEarningsStats: builder.query({
+      query: (timeRange?: "daily" | "weekly" | "monthly") => ({
+        url: `/admin/earnings-stats?timeRange=${timeRange || "monthly"}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
   useGetDriverRequestsQuery,
   useGetAllUsersQuery,
   useChangeBlockStatusMutation,
+  useChangeOnlineStatusMutation,
   useChangeApprovalStatusMutation,
   useGetAllRidesQuery,
   useCancelRideMutation,
+  useGetEarningsStatsQuery,
   // status
   useGetPendingApprovalsQuery,
   useApproveDriverMutation,

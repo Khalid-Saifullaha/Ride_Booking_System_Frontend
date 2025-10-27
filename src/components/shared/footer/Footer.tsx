@@ -13,7 +13,6 @@ import Logo from "../Logo";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // Only use routes that exist in your router
   const quickLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
@@ -28,29 +27,29 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-background border-t border-border text-foreground">
       <div className="mxw py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Logo></Logo>
+            <Logo />
             <p className="text-muted-foreground mt-3 mb-6 leading-relaxed">
-              Your reliable ride-sharing platform connecting riders with
-              drivers. Safe, affordable, and convenient transportation.
+              Rida is your trusted ride-sharing partner. Safe, affordable, and
+              reliable journeys connecting people every day.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-4 w-4 text-primary" />
                 <span>+880 1739503580</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 text-primary" />
                 <span>example@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
+                <MapPin className="h-4 w-4 text-primary" />
                 <span>Dhaka, Bangladesh</span>
               </div>
             </div>
@@ -58,7 +57,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-foreground">
+            <h3 className="font-semibold text-lg mb-4 text-primary">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -66,7 +65,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 hover:underline"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
                   >
                     {link.label}
                   </Link>
@@ -77,7 +76,7 @@ export default function Footer() {
 
           {/* Get Started */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-foreground">
+            <h3 className="font-semibold text-lg mb-4 text-primary">
               Get Started
             </h3>
             <ul className="space-y-3">
@@ -85,7 +84,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 hover:underline"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 hover:underline"
                   >
                     {link.label}
                   </Link>
@@ -100,14 +99,14 @@ export default function Footer() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full justify-start"
+                  className="w-full justify-start hover:border-primary/60 hover:text-primary"
                 >
                   App Store
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full justify-start"
+                  className="w-full justify-start hover:border-primary/60 hover:text-primary"
                 >
                   Google Play
                 </Button>
@@ -117,7 +116,7 @@ export default function Footer() {
 
           {/* Social & Newsletter */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-foreground">
+            <h3 className="font-semibold text-lg mb-4 text-primary">
               Connect With Us
             </h3>
 
@@ -126,12 +125,9 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="text-muted-foreground hover:text-foreground hover:border-primary/50"
+                className="hover:text-primary hover:border-primary/60 transition-colors"
                 onClick={() =>
-                  window.open(
-                    "https://www.facebook.com/abdullah.shamem.5",
-                    "_blank"
-                  )
+                  window.open("https://www.facebook.com/", "_blank")
                 }
               >
                 <Facebook className="h-4 w-4" />
@@ -139,10 +135,10 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="text-muted-foreground hover:text-foreground hover:border-primary/50"
+                className="hover:text-primary hover:border-primary/60 transition-colors"
                 onClick={() =>
                   window.open(
-                    "https://www.linkedin.com/in/abdullah107189/",
+                    "https://www.linkedin.com/in/khalid-saifullaha/",
                     "_blank"
                   )
                 }
@@ -152,13 +148,8 @@ export default function Footer() {
               <Button
                 variant="outline"
                 size="icon"
-                className="text-muted-foreground hover:text-foreground hover:border-primary/50"
-                onClick={() =>
-                  window.open(
-                    "https://discord.com/users/md._abdullah_all_shamem",
-                    "_blank"
-                  )
-                }
+                className="hover:text-primary hover:border-primary/60 transition-colors"
+                onClick={() => window.open("https://discord.com", "_blank")}
               >
                 <MessageCircle className="h-4 w-4" />
               </Button>
@@ -172,7 +163,7 @@ export default function Footer() {
               <div className="flex gap-2">
                 <input
                   placeholder="Your email"
-                  className="flex-1 px-3 py-2 text-sm border border-input rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                  className="flex-1 px-3 py-2 text-sm border border-input rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                 />
                 <Button
                   size="sm"
@@ -186,20 +177,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-border mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm text-center md:text-left">
-            © {currentYear} RideShare. All rights reserved.
+            © {currentYear}{" "}
+            <span className="text-primary font-semibold">Rida</span>. All rights
+            reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               to="#"
-              className="text-muted-foreground hover:text-foreground text-sm transition-colors hover:underline"
+              className="text-muted-foreground hover:text-primary text-sm transition-colors hover:underline"
             >
               Privacy
             </Link>
             <Link
               to="#"
-              className="text-muted-foreground hover:text-foreground text-sm transition-colors hover:underline"
+              className="text-muted-foreground hover:text-primary text-sm transition-colors hover:underline"
             >
               Terms
             </Link>

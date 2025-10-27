@@ -1,86 +1,97 @@
 // components/Testimonials.tsx
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Sarah Ahmed",
-    role: "Regular Rider",
+    name: "Ayesha Rahman",
+    role: "Daily Commuter",
     content:
-      "The best ride booking app I've used! Drivers are always professional and vehicles are clean.",
+      "Rida makes my daily commute effortless. Drivers are punctual and the app is super easy to use.",
     rating: 5,
   },
   {
-    name: "Raj Sharma",
-    role: "Business Traveler",
+    name: "Tanvir Hossain",
+    role: "Frequent Traveler",
     content:
-      "Perfect for my business trips. Reliable service and great customer support.",
+      "Amazing service! The real-time tracking and safe rides give me peace of mind every time I book.",
     rating: 5,
   },
   {
-    name: "Fatima Begum",
+    name: "Nabila Karim",
     role: "Student",
     content:
-      "Affordable prices and quick service. Love the real-time tracking feature!",
+      "Affordable and reliable. I love the quick pickup feature—it saves so much time!",
     rating: 4,
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-gradient-to-b from-muted/5 to-muted/20">
       <div className="mxw">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            What Our Customers Say
+            Hear From Our Riders
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Hear from our satisfied customers.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Trusted by thousands of happy riders. Here’s what they have to say.
           </p>
         </div>
 
+        {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="bg-card border-border hover:shadow-xl transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <CardContent className="p-8">
-                <div className="flex items-center gap-2 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-5 w-5 ${
-                        i < testimonial.rating
-                          ? "text-accent fill-accent"
-                          : "text-muted"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="font-semibold text-primary">
+              <Card className="bg-card/50 backdrop-blur-md border-0 shadow-md hover:shadow-2xl rounded-xl transition-all group">
+                <CardContent className="p-8">
+                  {/* Stars */}
+                  <div className="flex items-center gap-1 mb-4 justify-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-5 w-5 ${
+                          i < testimonial.rating
+                            ? "text-primary fill-primary"
+                            : "text-muted/50"
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Content */}
+                  <p className="text-muted-foreground mb-6 italic text-center">
+                    "{testimonial.content}"
+                  </p>
+
+                  {/* Customer Info */}
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
                         .join("")}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-card-foreground">
-                      {testimonial.name}
                     </div>
-                    <div className="text-muted-foreground text-sm">
-                      {testimonial.role}
+                    <div className="text-left">
+                      <div className="font-semibold text-foreground">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

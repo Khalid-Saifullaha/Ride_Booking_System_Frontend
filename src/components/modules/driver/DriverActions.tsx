@@ -15,7 +15,9 @@ interface DriverActionsProps {
   rideId: string;
 }
 
-export function DriverActions({ currentStatus }: DriverActionsProps) {
+export function DriverActions({
+  currentStatus,
+}: DriverActionsProps) {
   const getAvailableActions = () => {
     switch (currentStatus) {
       case "accepted":

@@ -95,7 +95,7 @@ export function HeroSection() {
               alt="Rida Ride Management App Hero"
               className="w-full h-auto max-w-md mx-auto lg:max-w-none rounded-2xl object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <div className="absolute inset-0  from-black/20 to-transparent" />
           </motion.div>
         </div>
       </div>

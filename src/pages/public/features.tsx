@@ -212,6 +212,8 @@ export default function FeaturesPage() {
             Whether you're looking for a ride, a flexible job, or a robust
             platform to manage, RideShare has the tools you need.
           </p>
+          {/* এখানে আপনি একটি বাটন বা লিংক যোগ করতে পারেন */}
+          {/* <Button size="lg">Get Started Today</Button> */}
         </div>
       </div>
     </section>

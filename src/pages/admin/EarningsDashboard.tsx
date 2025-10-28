@@ -61,6 +61,7 @@ interface MetricCardProps {
   value: string;
   description: string;
 }
+// ----------------------------------------------------
 
 const timeRanges: { value: TimeRange; label: string }[] = [
   { value: "daily", label: "Daily" },
@@ -218,7 +219,6 @@ export function EarningsDashboard() {
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    // CustomPieLabelRenderProps ব্যবহার করা হয়েছে
                     label={
                       ((props: CustomPieLabelRenderProps) =>
                         `${props.name} (${(props.percent * 100).toFixed(
@@ -229,7 +229,7 @@ export function EarningsDashboard() {
                     fill="#8884d8"
                     dataKey="value"
                   >
-                    {vehicleChartData.map((entry: any, index: number) => (
+                    {vehicleChartData.map((index: number) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={COLORS[index % COLORS.length]}

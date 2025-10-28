@@ -3,7 +3,7 @@ import { Smartphone, Download, Star } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-[oklch(0.586_0.253_17.585)] via-[oklch(0.514_0.222_16.935)] to-[oklch(0.455_0.188_13.697)] text-[oklch(0.969_0.015_12.422)] overflow-hidden">
+    <section className="relative py-20  from-[oklch(0.586_0.253_17.585)] via-[oklch(0.514_0.222_16.935)] to-[oklch(0.455_0.188_13.697)] text-[oklch(0.969_0.015_12.422)] overflow-hidden">
       {/* Subtle light overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.06),transparent_60%)]" />
 
@@ -61,7 +61,7 @@ export function CTASection() {
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.141_0.005_285.823)]/70 to-transparent" />
+              <div className="absolute inset-0  from-[oklch(0.141_0.005_285.823)]/70 to-transparent" />
             </div>
           </div>
         </div>

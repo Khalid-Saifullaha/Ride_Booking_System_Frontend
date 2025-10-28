@@ -34,8 +34,7 @@ export function LoginForm() {
   const onSubmit = async (data: LoginFormValues) => {
     try {
       // API call
-      const result = await login(data).unwrap();
-      console.log("Login result:", result);
+      await login(data).unwrap();
       navigate("/");
       toast.success("Login successful! 🎉", {
         description: `Welcome back!`,

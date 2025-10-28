@@ -38,8 +38,7 @@ const driverSchema = commonSchema.extend({
     .string()
     .min(3)
     .regex(/^[A-Z0-9-]*$/, {
-      message:
-        "License plate must contain only uppercase letters, numbers, and hyphens",
+      message: "License plate must contain only uppercase letters, numbers, and hyphens",
     }),
   model: z.string().min(2),
   carType: z.string().min(2),

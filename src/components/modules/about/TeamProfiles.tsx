@@ -13,19 +13,19 @@ export function TeamProfiles() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "ceo@rideshare.com",
-      },
+        email: "ceo@rideshare.com"
+      }
     },
     {
       name: "Fatima Begum",
       role: "CTO",
-      image: "/team/cto.jpg",
+      image: "/team/cto.jpg", 
       bio: "Tech expert specializing in scalable platforms. Leads our engineering team with innovation and precision.",
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "cto@rideshare.com",
-      },
+        email: "cto@rideshare.com"
+      }
     },
     {
       name: "Raj Sharma",
@@ -35,8 +35,8 @@ export function TeamProfiles() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "operations@rideshare.com",
-      },
+        email: "operations@rideshare.com"
+      }
     },
     {
       name: "Sarah Islam",
@@ -46,8 +46,8 @@ export function TeamProfiles() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "marketing@rideshare.com",
-      },
+        email: "marketing@rideshare.com"
+      }
     },
     {
       name: "Karim Ahmed",
@@ -57,8 +57,8 @@ export function TeamProfiles() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "safety@rideshare.com",
-      },
+        email: "safety@rideshare.com"
+      }
     },
     {
       name: "Nadia Chowdhury",
@@ -68,9 +68,9 @@ export function TeamProfiles() {
       social: {
         linkedin: "#",
         twitter: "#",
-        email: "support@rideshare.com",
-      },
-    },
+        email: "support@rideshare.com"
+      }
+    }
   ];
 
   return (
@@ -81,62 +81,39 @@ export function TeamProfiles() {
             Meet Our Team
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate professionals dedicated to revolutionizing transportation
-            in Bangladesh
+            Passionate professionals dedicated to revolutionizing transportation in Bangladesh
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <Card
-              key={index}
-              className="border-0 shadow-lg bg-card hover:shadow-xl transition-all group"
-            >
+            <Card key={index} className="border-0 shadow-lg bg-card hover:shadow-xl transition-all group">
               <CardContent className="p-6 text-center">
                 {/* Profile Image */}
                 <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                   <div className="w-full h-full bg-primary/10 flex items-center justify-center">
                     <span className="text-2xl font-bold text-primary">
-                      {member.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                      {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                 </div>
 
                 {/* Member Info */}
-                <h3 className="text-xl font-semibold text-card-foreground mb-2">
-                  {member.name}
-                </h3>
-                <div className="text-accent font-medium mb-4">
-                  {member.role}
-                </div>
+                <h3 className="text-xl font-semibold text-card-foreground mb-2">{member.name}</h3>
+                <div className="text-accent font-medium mb-4">{member.role}</div>
                 <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                   {member.bio}
                 </p>
 
                 {/* Social Links */}
                 <div className="flex justify-center space-x-3">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full border-border hover:bg-primary hover:text-primary-foreground"
-                  >
+                  <Button variant="outline" size="icon" className="rounded-full border-border hover:bg-primary hover:text-primary-foreground">
                     <Linkedin className="h-4 w-4" />
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full border-border hover:bg-primary hover:text-primary-foreground"
-                  >
+                  <Button variant="outline" size="icon" className="rounded-full border-border hover:bg-primary hover:text-primary-foreground">
                     <Twitter className="h-4 w-4" />
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="rounded-full border-border hover:bg-primary hover:text-primary-foreground"
-                  >
+                  <Button variant="outline" size="icon" className="rounded-full border-border hover:bg-primary hover:text-primary-foreground">
                     <Mail className="h-4 w-4" />
                   </Button>
                 </div>
@@ -149,17 +126,11 @@ export function TeamProfiles() {
         <div className="text-center mt-16">
           <Card className="border-0 shadow-lg bg-gradient-to-r from-primary to-[oklch(0.65_0.15_250)] text-primary-foreground">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">
-                Want to Join Our Team?
-              </h3>
+              <h3 className="text-2xl font-bold mb-4">Want to Join Our Team?</h3>
               <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-                We're always looking for talented individuals who share our
-                passion for innovation and customer service.
+                We're always looking for talented individuals who share our passion for innovation and customer service.
               </p>
-              <Button
-                size="lg"
-                className="bg-background text-foreground hover:bg-muted"
-              >
+              <Button size="lg" className="bg-background text-foreground hover:bg-muted">
                 View Open Positions
               </Button>
             </CardContent>

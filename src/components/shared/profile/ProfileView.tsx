@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { useGetMeQuery } from "@/redux/features/auth/auth.api";
 import { ApprovalRequest } from "./ApprovalRequest";
-import { ChangePasswordForm } from "./ChangePasswordForm";
+import { ChangePasswordForm } from "./changePasswordForm";
 
 export function ProfileView() {
   const navigate = useNavigate();
